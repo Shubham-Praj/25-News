@@ -1,0 +1,45 @@
+.TopLogo {
+  width: 8%;
+  height: auto;
+  margin-right: 5px;
+}
+
+.cardHolder {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.InLayoutCard {
+  display: flex;
+  max-width: 30vw;
+  margin: 10px;
+  max-height: fit-content;
+}
+
+.newstabs {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.SelectedTab {
+  color: coral;
+  font-weight: bold;
+}
+
+@media(max-width : 768px){
+
+  .newstabs{
+    justify-content: flex-start;
+  }
+
+  .cardHolder{
+    flex-direction: column;
+  }
+
+  .InLayoutCard{
+    max-width: max-content;
+  }
+}
