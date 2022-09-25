@@ -1,8 +1,6 @@
 // import NewsTabs from "./Components/NewsTabs";
 import { useEffect, useState } from "react";
-import NewsCards from "./Components/NewsCards";
 import NewsCard from "./Components/NewCard/NewCard";
-import NewsTabs from "./Components/NewsTabs";
 import AppNavBar from "./Components/NavBar/NavBar";
 import React from "react";
 import { Box, Grid } from "@mui/material";
@@ -37,24 +35,23 @@ function App() {
     <>
       <AppNavBar getnews={getnews} />
 
-      <NewsTabs getnews={getnews}></NewsTabs>
-
-      {/* <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1, mt: 10, mx: 5 }}>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={6} sm={4}>
-            {news.map((newdata, index) => (
-              <NewsCards newdata={newdata} key={index}></NewsCards>
-            ))}
-          </Grid>
+          {news.map((newdata, index) => (
+            <Grid item xs={12} md={6} sm={4}>
+              <NewsCard newData={newdata} key={index} />
+            </Grid>
+          ))}
         </Grid>
-      </Box> */}
+      </Box>
 
-      <div className="cardHolder">
-        <NewsCard />
-        {news.map((newdata, index) => (
-          <NewsCards newdata={newdata} key={index}></NewsCards>
+      {/* <div className="cardHolder">
+        {news.map((newData, index) => (
+          <>
+            <NewsCard key={index} newData={newData} />
+          </>
         ))}
-      </div>
+      </div> */}
     </>
   );
 }
