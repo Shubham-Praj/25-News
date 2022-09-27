@@ -8,7 +8,7 @@ import moment from "moment";
 
 export default function NewCard({ newData }) {
   return (
-    <Card sx={{ display: "flex" }}>
+    <Card>
       <CardActionArea>
         <CardMedia
           component="img"
