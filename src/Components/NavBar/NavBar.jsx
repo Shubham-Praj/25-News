@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,7 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import NewspaperIcon from "@mui/icons-material/Newspaper";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
+import { useTheme } from "@mui/material";
 
 const pages = [
   "All",
@@ -29,8 +29,8 @@ const pages = [
 ];
 
 const AppNavBar = (props) => {
+  const theme = useTheme();
   const [anchorElNav, setAnchorElNav] = useState(null);
-  // const colorMode = useContext(ColorModeContext);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -131,9 +131,9 @@ const AppNavBar = (props) => {
               </Button>
             ))}
           </Box>
-          {/* <IconButton
+          <IconButton
             sx={{ ml: 1 }}
-            onClick={colorMode.toggleColorMode}
+            onClick={props.colorMode.toggleColorMode}
             color="inherit"
           >
             {theme.palette.mode === "dark" ? (
@@ -141,7 +141,7 @@ const AppNavBar = (props) => {
             ) : (
               <Brightness4Icon />
             )}
-          </IconButton> */}
+          </IconButton>
         </Toolbar>
       </Container>
     </AppBar>

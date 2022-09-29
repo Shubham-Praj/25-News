@@ -9,8 +9,8 @@ const ColorModeContext = createContext({ toggleColorMode: () => {} });
 
 function App() {
   const [news, setnews] = useState([]);
-
   const [mode, setMode] = useState("light");
+
   const colorMode = useMemo(
     () => ({
       toggleColorMode: () => {
@@ -20,7 +20,7 @@ function App() {
     []
   );
 
-  const theme = React.useMemo(
+  const theme = useMemo(
     () =>
       createTheme({
         palette: {
@@ -48,7 +48,7 @@ function App() {
       <ColorModeContext.Provider value={colorMode}>
         <ThemeProvider theme={theme}>
           <Paper>
-            <AppNavBar getnews={getnews} />
+            <AppNavBar getnews={getnews} colorMode={colorMode} />
             <Box sx={{ pt: 10, px: 5 }}>
               <Grid container spacing={2}>
                 {news.map((newdata, index) => (
