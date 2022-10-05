@@ -1,5 +1,7 @@
 # Getting Started with 25-News App <img src="./build/favicon.ico" alt="drawing" width="30px" height="30px"/>
 
+## **[Live App Link](https://25-news.netlify.app/)**
+
 ## Introduction
 
 A simple responsive react application built using [**Material UI**](https://mui.com/) and a open source [**News API**](https://github.com/sumitkolhe/inshorts-api#-inshorts-news-api-v2) to fetch and display news from the following categories.
@@ -60,6 +62,7 @@ Clone the repository into local system
 Make sure node js is installed on local system
 
 In the project directory, you can run:
+
 ### `npm start`
 
 Runs the app in the development mode.\
