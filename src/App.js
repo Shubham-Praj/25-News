@@ -31,16 +31,20 @@ function App() {
   );
 
   const getnews = async (SelectedtabName) => {
-    console.log("in getnews :-", SelectedtabName);
+    if (SelectedtabName === "Top stories") {
+      SelectedtabName = "top_stories";
+    }
+
     const res = await fetch(
-      `https://inshorts.vercel.app/news?category=${SelectedtabName.toLowerCase()}`
+      `https://inshortsv2.vercel.app/news?type=${SelectedtabName.toLowerCase()}&limit=50`
     );
+
     const data = await res.json();
     setnews(data.articles);
   };
 
   useEffect(() => {
-    getnews("all");
+    getnews("all_news");
   }, []);
 
   return (
@@ -52,7 +56,7 @@ function App() {
             <Box sx={{ pt: 10, px: 5 }}>
               <Grid container spacing={2}>
                 {news.map((newdata, index) => (
-                  <Grid item xs={12} md={6} xl={4}>
+                  <Grid key={index} item xs={12} md={6} xl={4}>
                     <NewsCard newData={newdata} key={index} />
                   </Grid>
                 ))}

@@ -13,12 +13,12 @@ export default function NewCard({ newData }) {
         <CardMedia
           component="img"
           height="250"
-          image={newData.image}
+          image={newData.image_url}
           alt="green iguana"
         />
         <CardContent>
           <a
-            href={newData.read_more}
+            href={newData.source_url}
             style={{ textDecoration: "none" }}
             target="_blank"
             rel="noreferrer"
@@ -31,7 +31,9 @@ export default function NewCard({ newData }) {
             {newData.description}
           </Typography>
           <small className="text-muted">
-            Last updated on {moment(newData.timestamp).format("lll")}
+            <i>
+              Last updated on <b>{moment(newData.timestamp).format("lll")}</b>
+            </i>
           </small>
         </CardContent>
       </CardActionArea>
