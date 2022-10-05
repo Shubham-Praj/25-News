@@ -1,4 +1,4 @@
-# Getting Started with 25-News App <img src="./build/favicon.ico" alt="drawing" width="30px" height="30px"/>
+# Getting Started with 25-News App
 
 ## **[Live App Link](https://25-news.netlify.app/)**
 
