@@ -36,7 +36,7 @@ function App() {
     }
 
     const res = await fetch(
-      `https://inshortsv2.vercel.app/news?type=${SelectedtabName.toLowerCase()}&limit=50`
+      `https://inshorts.vercel.app/news?type=${SelectedtabName.toLowerCase()}&limit=25`
     );
 
     const data = await res.json();
